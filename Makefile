@@ -9,6 +9,7 @@ console:
 	bin/rails console
 
 lint:
+	bundle exec slim-lint app/views/
 	bundle exec rubocop
 
 fix:
