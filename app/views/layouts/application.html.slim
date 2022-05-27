@@ -1,9 +1,9 @@
 doctype html
-html
+html.h-100 lang="#{I18n.locale}"
   head
     title
-      | CollectiveBlog
-    meta[name="viewport" content="width=device-width,initial-scale=1"]
+      = content_for?(:title) ? yield(:title) : "Collective Blog"
+    meta[name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -15,14 +15,8 @@ html
 
     = render 'layouts/shared/flash'
 
-    main
-      .mt-4.mb-5.pb-5
-        .container
-          .p-4.align-items-center.border.shadow.bg-white.rounded-3
-            .mb-4
-              h2 = yield :title
-
-            == yield
+    main.container.wrapper.flex-grow-1
+      == yield
 
     = render 'layouts/shared/footer'
 

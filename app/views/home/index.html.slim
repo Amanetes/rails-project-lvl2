@@ -1,2 +1,25 @@
-= content_for :title do
-  = 'Home#index'
+- content_for :title do
+  = t('.title')
+
+.container.my-4
+  h1 t('.AppName')
+  .row
+    - @posts.each do |post|
+      .col-md-12
+        .card.mb-3
+          .card-body
+            .h5.card-title
+              = link_to post.title, post, class: 'link-dark text-decoration-none'
+            .card-subtitle.badge.rounded-pill.bg-info.mb-2
+              = post.category.name
+            .card-text
+              = truncate post.body, length: 250
+          .card-footer.d-inline-flex
+              text-right.small.text-muted.mt-auto
+                span.me-2.bi-person-badge
+                  =< post.creator.email
+                span.me-2.bi-clock
+                  =< time_ago_in_words post.created_at
+
+
+

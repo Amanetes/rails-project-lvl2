@@ -1,21 +1,54 @@
-p#notice = notice
+- content_for :title do
+  = t('.title')
+.container.wrapper.flex-grow-1
+  .row.border.mt-5.p-5.shadow.bg-light.bg-gradient.rounded-3
+    .ol.breadcrumb
+      .li.breadcrumb-item
+        = link_to 'Все статьи', root_path
+      .li.breadcrumb-item.active
+        = @post.category.name
+    .row.justify-content-center.mt-4
+      article.col-12
+        h1.mb-4.mb-lg-5
+          = @post.title
+        p = @post.body
+        .d-flex.justify-content-between.mt-5.align-items-lg-end
+          #button-section
+            span
+              - if current_user.eql?(@post.creator)
+                = link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary'
+                = link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ms-2'
+          #post-section
+            span.badge.bg-info.text-white
+              = @post.creator.email
+            span.ms-2.badge.bg-info.text-white
+              = I18n.l(@post.created_at, format: :long)
+          #likes-section
+            span.bi-person-badge
+              = Post.count
+hr.text-dark
+.card
+  .card-body.lead.mb-3
 
-p
-  strong Title:
-  = @post.title
 
-p
-  strong Body:
-  = @post.body
-
-p
-  strong User:
-  = @post.user
-
-p
-  strong Category:
-  = @post.category
-
-=> link_to "Edit", edit_post_path(@post)
-'|
-=< link_to "Back", posts_path
+/
+/ d-grid.gap-2.d-md-block.my-3
+/ ol.breadcrumb
+/   li.breadcrumb-item
+/     = link_to t('posts.index'), root_path
+/   li.breadcrumb-item.active
+/     = @post.category.name
+/ h2
+/   = @post.title
+/ p
+/   = @post.body
+/   .mt-5
+/     span.me-2
+/       = @post.creator.email
+/     span.me-2
+/       = I18n.l(@post.created_at, format: :long)
+/     span.me-2
+/
+/ = link_to 'Create Comment', class: 'btn btn-outline-primary'
+/ br
+/ = link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary'

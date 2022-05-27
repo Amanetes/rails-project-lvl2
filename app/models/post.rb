@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: posts
@@ -21,6 +23,9 @@
 #  user_id      (user_id => users.id)
 #
 class Post < ApplicationRecord
-  belongs_to :user
-  belongs_to :category
+  belongs_to :creator, class_name: 'User', foreign_key: 'user_id', inverse_of: :posts
+  belongs_to :category, inverse_of: :posts
+
+  validates :title, presence: true
+  validates :body, length: { maximum: 500 }
 end
