@@ -3,8 +3,8 @@
 Rails.application.routes.draw do
   scope '/(:locale)', locale: /en|ru/ do
     devise_for :users
-    root 'home#index'
+    root 'posts#index'
 
-    resources :posts, except: [:index]
+    resources :posts
   end
 end

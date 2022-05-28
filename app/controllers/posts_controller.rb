@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_post, only: %i[show edit update destroy]
   before_action :verify_user, only: %i[edit update destroy]
+
+  def index
+    @posts = Post.all.order(created_at: :desc)
+  end
 
   def show; end
 
