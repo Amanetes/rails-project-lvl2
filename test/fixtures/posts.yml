@@ -24,11 +24,11 @@
 one:
   title: MyString
   body: MyText
-  user: one
+  creator: one
   category: one
 
-two:
+without_comments:
   title: MyString
   body: MyText
-  user: two
+  creator: two
   category: two

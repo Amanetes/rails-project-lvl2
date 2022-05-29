@@ -4,10 +4,15 @@ en:
       post:
         one: Post
         other: Posts
+      category:
+        one: Category
+        other: Categories
     attributes:
       post:
         title: Title
         body: Text
+      category:
+        name: Name
 
 
     errors:

@@ -1,4 +1,18 @@
 en:
-  home:
+  back: Back
+  destroy: Delete
+  destroy_confirmation: Are you sure?
+  edit: Edit
+  show: Show
+  posts:
     index:
       title: Collective Blog
+    new:
+      title: New post
+    edit:
+      title: Edit post
+    show:
+      title: All posts
+
+
+

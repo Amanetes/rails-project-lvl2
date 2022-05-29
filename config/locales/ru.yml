@@ -1,4 +1,15 @@
 ru:
-  home:
+  back: Назад
+  destroy: Удалить
+  destroy_confirmation: Вы уверены?
+  edit: Изменить
+  show: Показать
+  posts:
     index:
       title: Коллективный блог
+    new:
+      title: Новый пост
+    edit:
+      title: Редактировать пост
+    show:
+      title: Все статьи

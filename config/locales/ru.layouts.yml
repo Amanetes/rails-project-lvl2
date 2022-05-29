@@ -6,6 +6,7 @@ ru:
         sign_out: "Выйти"
         registration: "Регистрация"
         app_logo: Блог
+        add_post: 'Добавить пост'
       footer:
         hexlet_title: "&copy; Хекслет, %{year}"
       flash:

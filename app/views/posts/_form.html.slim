@@ -4,12 +4,12 @@
 
   .form-floating.mb-3
     = f.input :title,
-            placeholder: 'Title',
+            placeholder: :title,
             label: false,
             wrapper_html: { class: 'my-3' }
     = f.input :body,
             as: :text,
-            placeholder: 'Enter text',
+            placeholder: :body,
             label: false,
             wrapper_html: { class: 'my-3' }
     = f.association :category,

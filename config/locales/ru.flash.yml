@@ -1,0 +1,10 @@
+ru:
+  flash:
+    posts:
+      new:
+        success: Пост успешно создан
+      update:
+        success: Пост успешно обновлен
+      delete:
+        success: Пост успешно удален
+        error: Невозможно удалить пост

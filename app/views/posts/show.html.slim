@@ -4,7 +4,7 @@
   .row.border.mt-5.p-5.shadow.bg-light.bg-gradient.rounded-3
     .ol.breadcrumb
       .li.breadcrumb-item
-        = link_to 'Все статьи', root_path
+        = link_to t('.title'), root_path
       .li.breadcrumb-item.active
         = @post.category.name
     .row.justify-content-center.mt-4
@@ -16,16 +16,16 @@
           #button-section
             span
               - if current_user.eql?(@post.creator)
-                = link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary'
-                = link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ms-2'
+                = link_to t('edit'), edit_post_path(@post), class: 'btn btn-primary'
+                = link_to t('destroy'), @post, method: :delete, data: { confirm: t('destroy_confirmation') }, class: 'btn btn-danger ms-2'
           #post-section
             span.badge.bg-info.text-white
               = @post.creator.email
             span.ms-2.badge.bg-info.text-white
-              = I18n.l(@post.created_at, format: :long)
+              = l(@post.created_at, format: :long)
           #likes-section
-            span.bi-person-badge
-              = Post.count
+            span.bi-heart.text-dark
+              =< Post.count
 hr.text-dark
 .card
   .card-body.lead.mb-3

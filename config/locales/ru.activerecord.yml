@@ -6,10 +6,15 @@ ru:
         many: Посты
         few: Посты
         other: Посты
+      category:
+        one: Категория
+        other: Категории
     attributes:
       post:
         title: Название
         body: Содержание
+      category:
+        name: Название
 
     errors:
       models:

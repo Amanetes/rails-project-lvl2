@@ -6,5 +6,6 @@ en:
         sign_out: "Sign out"
         registration: "Sign up"
         app_logo: Blog
+        add_post: 'Add post'
       footer:
         hexlet_title: "&copy; Hexlet, %{year}"

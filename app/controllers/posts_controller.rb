@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to @post, success: 'Post was successfully created.'
+      redirect_to @post, success: t('flash.posts.new.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, success: 'Post was successfully updated.'
+      redirect_to @post, success: t('flash.posts.update.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,9 +36,9 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to root_path, success: 'Post was successfully destroyed.'
+      redirect_to root_path, success: t('flash.posts.delete.success')
     else
-      render :show, alert: 'Cannot be deleted'
+      render :show, alert: t('flash.posts.delete.error')
     end
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def verify_user
-    redirect_to posts_path, alert: 'You cannot do smth with post' unless @post.creator.eql?(current_user)
+    redirect_to posts_path unless @post.creator.eql?(current_user)
   end
 
   # Only allow a list of trusted parameters through.

@@ -2,7 +2,7 @@
   = t('.title')
 
 .container.my-4
-  h1 t('.AppName')
+  h1 = t('.title')
   .row
     - @posts.each do |post|
       .col-md-12
@@ -14,12 +14,15 @@
               = post.category.name
             .card-text
               = truncate post.body, length: 250
-          .card-footer.d-inline-flex
-              text-right.small.text-muted.mt-auto
-                span.me-2.bi-person-badge
-                  =< post.creator.email
-                span.me-2.bi-clock
-                  =< time_ago_in_words post.created_at
+          .card-footer.d-flex.justify-content-between
+            text-right.small.text-muted.mt-auto
+              span.me-2.bi-person-badge
+                =< post.creator.email
+              span.me-2.bi-clock
+                =< time_ago_in_words post.created_at
+            text-right.small.text-danger.mt-auto
+              span.me-2.bi-heart-fill
+                =< Post.count
 
 
 
