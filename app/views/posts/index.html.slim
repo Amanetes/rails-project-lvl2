@@ -13,7 +13,7 @@
             .card-subtitle.badge.rounded-pill.bg-info.mb-2
               = post.category.name
             .card-text
-              = truncate post.body, length: 250
+              = truncate post.body, length: 200
           .card-footer.d-flex.justify-content-between
             text-right.small.text-muted.mt-auto
               span.me-2.bi-person-badge
@@ -22,7 +22,7 @@
                 =< time_ago_in_words post.created_at
             text-right.small.text-danger.mt-auto
               span.me-2.bi-heart-fill
-                =< Post.count
+                =< post.likes.count
 
 
 

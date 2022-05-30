@@ -7,12 +7,19 @@ en:
       category:
         one: Category
         other: Categories
+      post_comment:
+        one: Comment
+        many: Comments
+        few: Comments
+        zero: No comments
     attributes:
       post:
         title: Title
         body: Text
       category:
         name: Name
+      post_comment:
+        content: Comment
 
 
     errors:

@@ -9,12 +9,19 @@ ru:
       category:
         one: Категория
         other: Категории
+      post_comment:
+        one: Комментарий
+        many: Комментариев
+        few: Комментариев
+        zero: Нет комментариев
     attributes:
       post:
         title: Название
         body: Содержание
       category:
         name: Название
+      post_comment:
+        content: Комментарий
 
     errors:
       models:

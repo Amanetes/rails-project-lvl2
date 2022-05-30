@@ -24,8 +24,14 @@
             span.ms-2.badge.bg-info.text-white
               = l(@post.created_at, format: :long)
           #likes-section
-            span.bi-heart.text-dark
-              =< Post.count
+            - if @like.present?
+              = link_to post_like_path(@post, @like), method: :delete do
+                i.bi-heart-fill.text-danger
+            - else
+              = link_to post_likes_path(@post), method: :post do
+                i.bi-heart.text-danger
+            span
+              =< @post.likes.count
 hr.text-dark
   .lead.mb-3
     = t('comments')
@@ -35,5 +41,4 @@ hr.text-dark
       = render partial: 'posts/comments/comment', locals: { post: @post, comment: comment }
 
 
-    / = render partial: 'posts/comments/comment', locals: { comment: @comment, post: @post }
 

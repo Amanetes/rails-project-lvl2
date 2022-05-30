@@ -25,10 +25,6 @@ module Posts
 
     private
 
-    def set_post
-      @post = Post.find(params[:post_id])
-    end
-
     def set_comment
       @comment = PostComment.find(params[:id])
     end

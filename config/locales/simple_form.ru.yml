@@ -14,4 +14,6 @@ ru:
       post:
         title: Название
         body: Текст
+      post_comment:
+        content: Комментарий
 

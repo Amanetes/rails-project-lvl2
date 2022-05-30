@@ -5,7 +5,6 @@ en:
         success: Post successfully created
       update:
         success: Post successfully updated
-        failure:
       delete:
         success: Post successfully deleted
         error: Cannot delete post

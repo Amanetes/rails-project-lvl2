@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = @post.comments.build
+    @like = @post.likes.find_by(user: current_user)
   end
 
   def new
