@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
   setup do
     @post = posts(:one)
     @user = users(:one)
@@ -50,12 +49,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should PATCH posts#update' do
-    patch post_path(@post,locale: :ru), params: { post: @attrs}
+    patch post_path(@post, locale: :ru), params: { post: @attrs }
     assert_redirected_to post_path(@post)
 
     @post.reload
 
-    assert { @post.title == @attrs[:title]}
+    assert { @post.title == @attrs[:title] }
   end
 
   test 'should DELETE posts#destroy' do

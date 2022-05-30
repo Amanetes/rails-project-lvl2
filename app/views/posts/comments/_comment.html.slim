@@ -1,0 +1,22 @@
+.card.my-4
+  .card-header.small.mb-2.d-flex
+    .span.fw-bold.bi-person-badge
+      =< comment.user.email
+    .span.mx-2.fw-light.bi-clock
+      =< l(comment.created_at, format: :long)
+  .card-body.d-flex
+    .w-100
+      .mb-3
+        .small
+          = comment.content
+  hr.my-2
+  .mb-2.m-4.d-flex.justify-content-between
+    a.d-block.small.text-muted
+      = button_to
+      - if current_user.eql?(comment.user)
+        .span
+          = link_to t('destroy'), post_comment_path(@post, comment),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' },
+                  class: 'btn btn-danger'
+

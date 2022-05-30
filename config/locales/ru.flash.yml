@@ -2,9 +2,15 @@ ru:
   flash:
     posts:
       new:
-        success: Пост успешно создан
+        success: Пост опубликован
       update:
-        success: Пост успешно обновлен
+        success: Пост обновлен
       delete:
         success: Пост успешно удален
         error: Невозможно удалить пост
+    comments:
+      new:
+        success: Комментарий опубликован
+      destroy:
+        success: Комментарий удален
+        error: Не удалось удалить комментарий

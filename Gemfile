@@ -32,6 +32,7 @@ gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'ancestry'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -27,5 +27,13 @@
             span.bi-heart.text-dark
               =< Post.count
 hr.text-dark
-.card
-  .card-body.lead.mb-3
+  .lead.mb-3
+    = t('comments')
+    = render 'posts/comments/form', comment: @comment, url: post_comments_path(@post)
+  - @post.comments.each do |comment|
+    - if comment.persisted?
+      = render partial: 'posts/comments/comment', locals: { post: @post, comment: comment }
+
+
+    / = render partial: 'posts/comments/comment', locals: { comment: @comment, post: @post }
+

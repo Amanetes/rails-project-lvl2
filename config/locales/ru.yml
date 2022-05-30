@@ -4,6 +4,7 @@ ru:
   destroy_confirmation: Вы уверены?
   edit: Изменить
   show: Показать
+  comments: Комментарии
   posts:
     index:
       title: Коллективный блог

@@ -4,6 +4,7 @@ en:
   destroy_confirmation: Are you sure?
   edit: Edit
   show: Show
+  comments: Comments
   posts:
     index:
       title: Collective Blog

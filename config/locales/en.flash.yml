@@ -9,3 +9,9 @@ en:
       delete:
         success: Post successfully deleted
         error: Cannot delete post
+    comments:
+      new:
+        success: Comment published
+      destroy:
+        success: Comment deleted
+        error: Unable to delete comment
