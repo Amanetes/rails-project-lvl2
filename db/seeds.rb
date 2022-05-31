@@ -13,4 +13,3 @@
     name: Faker::Movie.unique.title
   )
 end
-
