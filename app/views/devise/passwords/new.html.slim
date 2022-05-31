@@ -6,7 +6,7 @@ h2
     = f.input :email,
             required: true,
             autofocus: true,
-            input_html: { autocomplete: "email" }
+            input_html: { autocomplete: 'email' }
   .form-actions
-    = f.button :submit, "Send me reset password instructions", class: 'btn btn-primary'
-= render "devise/shared/links"
+    = f.button :submit, 'Send me reset password instructions', class: 'btn btn-primary'
+= render 'devise/shared/links'

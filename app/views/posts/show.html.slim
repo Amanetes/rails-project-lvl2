@@ -38,6 +38,3 @@ hr.text-dark
     = render 'posts/comments/form', url: post_comments_path(@post), post: @post, comment: @comment
   - @post.comments.where(ancestry: nil).each do |comment|
     = render partial: 'posts/comments/comment', locals: { post: @post, comment: comment }
-
-
-

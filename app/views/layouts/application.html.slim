@@ -2,7 +2,7 @@ doctype html
 html.h-100 lang="#{I18n.locale}"
   head
     title
-      = content_for?(:title) ? yield(:title) : "Collective Blog"
+      = content_for?(:title) ? yield(:title) : 'Collective Blog'
     meta[name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"]
     = csrf_meta_tags
     = csp_meta_tag
@@ -19,4 +19,3 @@ html.h-100 lang="#{I18n.locale}"
       == yield
 
     = render 'layouts/shared/footer'
-
