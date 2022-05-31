@@ -48,7 +48,6 @@ group :development, :test do
   gem 'faker'
   gem 'rubocop', require: false
   gem 'rubocop-minitest'
-  gem 'rubocop-performance'
   gem 'rubocop-rails', require: false
   gem 'slim_lint'
   gem 'sqlite3', '~> 1.4'
