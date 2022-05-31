@@ -1,6 +1,6 @@
 h1 = t('.title')
 
-== render "form"
+= render 'form', post: @post
 
 => link_to t('show'), @post
 '|
