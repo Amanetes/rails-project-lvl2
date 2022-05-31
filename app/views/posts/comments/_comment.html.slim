@@ -11,7 +11,7 @@
   hr.my-2
   mb-2.m-4
     a.d-block.small.text-muted(href="#new_post_comment_#{comment.id}" data-bs-toggle='collapse')
-      = t('.add_a_comment')
+      = t('add_comment')
       - if current_user.eql?(comment.user)
         .span
           = link_to t('destroy'), post_comment_path(@post, comment),

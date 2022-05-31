@@ -1,11 +1,15 @@
 en:
   sign_up: Sign Up
+  sign_in: Sign In
+  forgot_password: Forgot password?
+  minimum_password_length: "%{length} characters minimum"
   back: Back
   destroy: Delete
   destroy_confirmation: Are you sure?
   edit: Edit
   show: Show
   comments: Comments
+  add_comment: Add comment
   posts:
     index:
       title: Collective Blog
@@ -14,7 +18,7 @@ en:
     edit:
       title: Edit post
     show:
-      title: All posts
+      title: Post
 
 
 

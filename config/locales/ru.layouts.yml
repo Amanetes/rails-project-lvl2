@@ -8,5 +8,5 @@ ru:
         app_logo: Блог
         add_post: 'Добавить пост'
       footer:
-        hexlet_title: "&copy; Хекслет, %{year}"
+        hexlet_title: © Хекслет %{year}
       flash:

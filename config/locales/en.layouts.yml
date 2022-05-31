@@ -8,4 +8,4 @@ en:
         app_logo: Blog
         add_post: 'Add post'
       footer:
-        hexlet_title: "&copy; Hexlet, %{year}"
+        hexlet_title: © Hexlet %{year}

@@ -1,11 +1,15 @@
 ru:
   sign_up: Регистрация
+  sign_in: Вход
+  forgot_password: Забыли пароль?
+  minimum_password_length: "минимум %{length} символов"
   back: Назад
   destroy: Удалить
   destroy_confirmation: Вы уверены?
   edit: Изменить
   show: Показать
   comments: Комментарии
+  add_comment: Добавить комментарий
   posts:
     index:
       title: Коллективный блог
@@ -14,4 +18,4 @@ ru:
     edit:
       title: Редактировать пост
     show:
-      title: Все статьи
+      title: Пост

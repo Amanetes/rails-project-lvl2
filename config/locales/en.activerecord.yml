@@ -7,10 +7,13 @@ en:
       category:
         one: Category
         other: Categories
+        few: Categories
+        many: Categories
       post_comment:
         one: Comment
         many: Comments
         few: Comments
+        other: Comments
         zero: No comments
     attributes:
       post:

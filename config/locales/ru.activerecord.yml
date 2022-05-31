@@ -9,11 +9,14 @@ ru:
       category:
         one: Категория
         other: Категории
+        few: Категорий
+        many: Категорий
       post_comment:
         one: Комментарий
         many: Комментариев
         few: Комментариев
         zero: Нет комментариев
+        other: Комментариев
     attributes:
       post:
         title: Название
