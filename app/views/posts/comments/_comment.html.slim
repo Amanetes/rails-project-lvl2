@@ -12,6 +12,12 @@
   mb-2.m-4
     a.d-block.small.text-muted(href="#new_post_comment_#{comment.id}" data-bs-toggle='collapse')
       = t('.add_a_comment')
+      - if current_user.eql?(comment.user)
+        .span
+          = link_to t('destroy'), post_comment_path(@post, comment),
+                  method: :delete,
+                  data: { confirm: t('destroy_confirmation') },
+                  class: 'small text-muted'
     .collapse data-bs-target="#new_post_comment_#{comment.id}" id="new_post_comment_#{comment.id}"
       = render 'posts/comments/form', url: post_comments_path(post), comment: post.comments.build, parent_id: comment.id
 
