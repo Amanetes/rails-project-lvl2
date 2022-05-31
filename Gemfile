@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'ancestry'
 gem 'devise'
 gem 'devise-i18n'
 gem 'i18n-tasks'
@@ -32,7 +33,6 @@ gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'ancestry'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

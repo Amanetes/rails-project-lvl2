@@ -11,7 +11,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should POST likes#create' do
-    post post_likes_path(@post, locale: :ru)
+    post post_likes_path(@post)
 
     like = PostLike.find_by! user_id: @user.id
 
@@ -19,8 +19,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should DELETE likes#destroy' do
-
-    delete post_like_path(@post, @like, locale: :ru)
+    delete post_like_path(@post, @like)
     assert { !PostLike.exists? @like.id }
     assert_response :redirect
   end

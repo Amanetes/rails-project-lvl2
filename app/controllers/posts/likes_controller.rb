@@ -14,6 +14,5 @@ module Posts
 
       redirect_to @like.post if @like.destroy
     end
-
   end
 end

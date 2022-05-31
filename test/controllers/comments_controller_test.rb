@@ -15,7 +15,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should POST comments#create' do
-    post post_comments_url(@post, locale: :ru), params: { post_comment: @attrs }
+    post post_comments_url(@post), params: { post_comment: @attrs }
 
     comment = PostComment.find_by! content: @attrs[:content]
 
@@ -24,7 +24,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should DELETE comments#destroy' do
-    delete post_comment_url(@post, @comment, locale: :ru)
+    delete post_comment_url(@post, @comment)
     assert_redirected_to post_url(@post)
     assert { !PostComment.exists? @comment.id }
   end
