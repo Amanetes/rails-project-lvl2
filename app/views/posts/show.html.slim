@@ -35,10 +35,9 @@
 hr.text-dark
   .lead.mb-3
     = t('comments')
-    = render 'posts/comments/form', comment: @comment, url: post_comments_path(@post)
-  - @post.comments.each do |comment|
-    - if comment.persisted?
-      = render partial: 'posts/comments/comment', locals: { post: @post, comment: comment }
+    = render 'posts/comments/form', url: post_comments_path(@post), post: @post, comment: @comment
+  - @post.comments.where(ancestry: nil).each do |comment|
+    = render partial: 'posts/comments/comment', locals: { post: @post, comment: comment }
 
 
 

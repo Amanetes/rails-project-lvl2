@@ -8,6 +8,7 @@ module Posts
     def create
       @comment = @post.comments.build(comment_params)
       @comment.user = current_user
+
       if @comment.save
         redirect_to @post, success: t('flash.comments.new.success')
       else
@@ -30,7 +31,7 @@ module Posts
     end
 
     def comment_params
-      params.require(:post_comment).permit(:content)
+      params.require(:post_comment).permit(:content, :parent_id)
     end
   end
 end

@@ -3,6 +3,8 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
+    - if local_assigns[:parent_id]
+      = f.input :parent_id, as: :hidden, input_html: { value: parent_id }
     = f.input :content, label: false, placeholder: :content
 
   .form-actions
