@@ -3,7 +3,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :verify_user, only: %i[edit update destroy]
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -49,10 +48,6 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  def verify_user
-    redirect_to posts_path unless @post.creator.eql?(current_user)
   end
 
   # Only allow a list of trusted parameters through.
