@@ -5,20 +5,16 @@
   .form-floating.mb-3
     = f.input :title,
             placeholder: :title,
-            label: false,
-            wrapper_html: { class: 'my-3' }
+            label: false
     = f.input :body,
             as: :text,
             placeholder: :body,
-            label: false,
-            wrapper_html: { class: 'my-3' }
+            label: false
     = f.association :category,
             collection: Category.order(:name),
             include_blank: false,
             required: false,
-            value_method: :id,
-            input_html: { class: 'form-select' },
-            wrapper_html: { class: 'mb-3' }
+            value_method: :id
 
   .form-actions
     = f.button :submit, class: 'btn-success my-2'
