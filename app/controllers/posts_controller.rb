@@ -43,7 +43,7 @@ class PostsController < ApplicationController
       flash[:success] = t('flash.posts.delete.success')
       redirect_to root_path
     else
-      flash[:alert] = t('flash.posts.delete.error')
+      flash.now[:alert] = t('flash.posts.delete.error')
       render :show
     end
   end

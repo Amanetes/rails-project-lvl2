@@ -6,7 +6,7 @@ module ApplicationHelper
       notice: 'alert alert-info',
       success: 'alert alert-success',
       error: 'alert alert-error',
-      alert: 'alert alert-error'
+      alert: 'alert alert-warning'
     }
     mapping[level.to_sym]
   end
