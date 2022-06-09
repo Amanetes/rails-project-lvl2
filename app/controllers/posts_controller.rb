@@ -22,7 +22,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to @post, success: t('flash.posts.new.success')
+      flash[:success] = t('flash.posts.new.success')
+      redirect_to @post
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +31,8 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, success: t('flash.posts.update.success')
+      flash[:success] = t('flash.posts.update.success')
+      redirect_to @post
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,9 +40,11 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to root_path, success: t('flash.posts.delete.success')
+      flash[:success] = t('flash.posts.delete.success')
+      redirect_to root_path
     else
-      render :show, alert: t('flash.posts.delete.error')
+      flash[:alert] = t('flash.posts.delete.error')
+      render :show
     end
   end
 

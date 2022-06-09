@@ -10,7 +10,8 @@ module Posts
       @comment.user = current_user
 
       if @comment.save
-        redirect_to @post, success: t('flash.comments.new.success')
+        flash[:success] = t('flash.comments.new.success')
+        redirect_to @post
       else
         render 'posts/show', status: :unprocessable_entity
       end
@@ -18,9 +19,11 @@ module Posts
 
     def destroy
       if @comment.destroy
-        redirect_to post_path(@comment.post), success: t('flash.comments.destroy.success')
+        flash[:success] = t('flash.comments.destroy.success')
+        redirect_to post_path(@comment.post)
       else
-        render 'posts/show', alert: t('flash.comments.destroy.error')
+        flash[:alert] = t('flash.comments.destroy.error')
+        render 'posts/show'
       end
     end
 
